@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.nav-bar {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 5rem 1fr 2fr 1fr 5rem;
+    width: 100%;
+    height: 50px;
+    background-color: #dcdcff;
+    box-shadow: 0 5px 50px 5px rgba(0, 0, 0, 0.4);
+}
+
+.nav-bar-logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    grid-column: 2/3;
+    background: -webkit-linear-gradient(#61b377, #ca5858);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-bar-logo>span {
+    font-size: 1.5rem;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.nav-items>li {
+    border-radius: 3px;
+    transition: 0.3s ease-out;
+}
+.mobile-nav-items>li,
+.nav-items>li {
+    padding: 5px;
+    text-align: center;
+}
+
+.mobile-nav-items>li:active,
+.nav-items>li:active {
+    font-size: 1.2rem;
+}
+
+.nav-items>li:hover,
+.mobile-nav-items>li:hover {
+    color: white;
+    background-color: #7b77de;
+}
+
+.nav-links {
+   display: grid;
+   grid-template-columns: 3fr 1fr 1fr 1fr;
+   align-items: center;
+
+}
+
+.instagram {
+    grid-column: 2/3;
+    display: block;
+    text-align: end;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 1.3rem;
+    color: #4d4daf;
+}
+
+.mobile-nav-items {
+    display: block;
+    position: absolute;
+}
+
+ .mobile-nav-items {
+    position: absolute;
+    width: 90%;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5x;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 5px 10px #918181;
+}
+
+
+
+.active-nav {
+    background-color: #7b77de;
+    color: white;
+}
+
+
+/* when screen size is 1080px or less  */
+@media(max-width: 1080px) {
+    .nav-bar {
+       grid-template-columns:  2rem 1fr 2fr 1fr 2rem;
+    }
+}
+
+@media(max-width: 900px) {
+    .nav-bar {
+        grid-template-columns: 3rem 1fr 2fr 1fr 2rem;
+    }
+    .nav-items {
+        display: none;
+    }
+    .nav-links {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-column: 4/5;
+
+    }
+}
+
+@media(max-width: 420px) {
+    .nav-bar {
+        grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    }
+}
